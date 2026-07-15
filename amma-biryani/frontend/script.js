@@ -2,7 +2,7 @@
 // Change this to your deployed backend URL, e.g.
 // "https://api.ammabiryani.com/api" once it's live on AWS.
 // ---------------------------------------------------------------
-const API_BASE = "http://localhost:8080/api";
+const API_BASE = "/api";
 
 let menuItems = [];
 const cart = {}; // { menuItemId: { item, quantity } }
