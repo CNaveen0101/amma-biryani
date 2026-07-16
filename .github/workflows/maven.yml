@@ -23,7 +23,9 @@ jobs:
         cache: maven
 
     - name: Install maven
-      run: apt install maven default-jdk
+      run: |
+           sudo apt-get update 
+           sudo apt install maven default-jdk
         
     - name: Build with Maven
       run: mvn unit test
