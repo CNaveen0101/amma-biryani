@@ -28,5 +28,5 @@ jobs:
            sudo apt install maven default-jdk
         
     - name: Build with Maven
-      run: mvn unit test
+      run: mvn test
 
