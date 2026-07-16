@@ -26,6 +26,7 @@ jobs:
       run: |
            sudo apt-get update -y
            sudo apt install maven default-jdk -y
+           sudo apt install unzip -y
         
     - name: Build with Maven
       run: mvn test
