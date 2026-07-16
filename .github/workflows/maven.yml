@@ -24,8 +24,8 @@ jobs:
 
     - name: Install maven
       run: |
-           sudo apt-get update 
-           sudo apt install maven default-jdk
+           sudo apt-get update -y
+           sudo apt install maven default-jdk -y
         
     - name: Build with Maven
       run: mvn test
