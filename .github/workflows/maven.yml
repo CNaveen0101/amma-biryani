@@ -41,12 +41,16 @@ jobs:
            -Dsonar.host.url=${{ vars.SONAR_HOST_URL }} \
            -Dsonar.token=${{ secrets.SONAR_TOKEN }}
 
+
     - name: OWASP Dependency Check
       run: |
+           mkdir -p $GITHUB_WORKSPACE/reports
            cd /home/ubuntu/dependency-check
+ 
            ./bin/dependency-check.sh \
            --scan $GITHUB_WORKSPACE \
            --out $GITHUB_WORKSPACE/reports \
+           --format HTML \
            --data /home/ubuntu/dependency-check/data \
            --noupdate
 
