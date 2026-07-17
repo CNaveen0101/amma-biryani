@@ -47,6 +47,6 @@ jobs:
            ./bin/dependency-check.sh \
            --scan . \
            --out reports \
-           --data ~/.dependency-check/data \
+           --data /home/ubuntu/dependency-check/data \
            --noupdate
      
