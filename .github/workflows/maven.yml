@@ -44,7 +44,6 @@ jobs:
 
     - name: OWASP Dependency Check
       run: |
-           export JAVA_OPTS="-Xms512m -Xmx2g"
            cd /home/ubuntu/dependency-check
            ./bin/dependency-check.sh \
            --scan . \
