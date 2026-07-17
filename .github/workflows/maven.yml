@@ -41,6 +41,12 @@ jobs:
            -Dsonar.host.url=${{ vars.SONAR_HOST_URL }} \
            -Dsonar.token=${{ secrets.SONAR_TOKEN }}
 
+    - name: Verify Java
+      run: |
+           which java
+           java -version
+           echo "JAVA_HOME=$JAVA_HOME"
+
 
     - name: OWASP Dependency Check
       run: |
