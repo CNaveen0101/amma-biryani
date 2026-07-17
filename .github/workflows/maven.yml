@@ -41,9 +41,11 @@ jobs:
            -Dsonar.host.url=${{ vars.SONAR_HOST_URL }} \
            -Dsonar.token=${{ secrets.SONAR_TOKEN }}
 
+
     - name: OWASP Dependency Check
       run: |
-           cd /home/ubuntu/dependency-check/
+           export JAVA_OPTS="-Xms512m -Xmx2g"
+           cd /home/ubuntu/dependency-check
            ./bin/dependency-check.sh \
            --scan . \
            --out reports \
