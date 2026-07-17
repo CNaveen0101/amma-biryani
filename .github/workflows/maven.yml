@@ -41,4 +41,11 @@ jobs:
            -Dsonar.host.url=${{ vars.SONAR_HOST_URL }} \
            -Dsonar.token=${{ secrets.SONAR_TOKEN }}
 
+    - name: OWASP Dependency Check
+      run: |
+           ./dependency-check.sh \
+           --scan . \
+           --out reports \
+           --data ~/.dependency-check/data \
+           --noupdate
      
