@@ -21,12 +21,17 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+        
+    - name: Verify Java
+      run: |
+           which java
+           java -version
+           echo "JAVA_HOME=$JAVA_HOME"
 
     - name: Install maven
       run: |
            sudo apt-get update -y
-           sudo apt install maven default-jdk -y
-           sudo apt install unzip -y
+           sudo apt install -y maven unzip
         
     - name: Build with Maven
       run: mvn clean package
@@ -40,12 +45,6 @@ jobs:
            mvn clean verify sonar:sonar \
            -Dsonar.host.url=${{ vars.SONAR_HOST_URL }} \
            -Dsonar.token=${{ secrets.SONAR_TOKEN }}
-
-    - name: Verify Java
-      run: |
-           which java
-           java -version
-           echo "JAVA_HOME=$JAVA_HOME"
 
 
     - name: OWASP Dependency Check
