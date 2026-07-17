@@ -31,8 +31,8 @@ jobs:
     - name: Build with Maven
       run: mvn clean package
    
-  Quality & Security: 
-     runs-on: myrunner
+  Test: 
+    runs-on: myrunner
 
     steps:
     - name: Build and SonarQube Scan
