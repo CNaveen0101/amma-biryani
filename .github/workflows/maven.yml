@@ -43,7 +43,8 @@ jobs:
 
     - name: OWASP Dependency Check
       run: |
-           ./home/ubuntu/dependency-check/bin/dependency-check.sh \
+           cd /home/ubuntu/dependency-check/
+           ./bin/dependency-check.sh \
            --scan . \
            --out reports \
            --data ~/.dependency-check/data \
